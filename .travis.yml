@@ -27,6 +27,30 @@ matrix:
           packages:
             - cmake
             - g++-5
+#Added power jobs
+    - env: MYCC="gcc-4.9" MYCXX="g++-4.9" STDLIB=libstdc++
+      os: linux
+      arch: ppc64le
+      addons: &gcc49
+        apt:
+          sources:
+            - kalakris-cmake
+            - ubuntu-toolchain-r-test
+          packages:
+            - cmake
+            - g++-4.9
+
+    - env: MYCC="gcc-5" MYCXX="g++-5" STDLIB=libstdc++
+      os: linux
+      arch: ppc64le
+      addons: &gcc5
+        apt:
+          sources:
+            - kalakris-cmake
+            - ubuntu-toolchain-r-test
+          packages:
+            - cmake
+            - g++-5
 
 #    - env: MYCC="clang-3.7" MYCXX="clang++-3.7" STDLIB=libc++
 #      os: linux
